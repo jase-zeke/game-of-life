@@ -1,0 +1,21 @@
+ 
+language: java
+
+git:
+  depth: 1
+
+jdk:
+  - openjdk8
+  
+before_install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+jobs:
+  include:
+  - stage: "Test maven"
+  jdk: openjdk8
+  script: mvn clear package
+
+branches:
+  only:
+  - master
