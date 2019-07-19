@@ -12,7 +12,8 @@ before_install:
 
 jobs:
   include:
-  - stage: "Test maven"
+  - stage: Test maven
+  name: Compilacion
   jdk: openjdk8
   script: mvn clear package
 
